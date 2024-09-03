@@ -112,12 +112,28 @@ header {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
+    font-weight: 400;
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 52px;
     line-height: 1.2;
+}
+h1 .subhead {
+	font-size: .6em;
+	font-weight: 600;
+	color: #3e8dff;
+	display: block;
+}
+
+.sponsored h4 {
+	font-size: .9em;
+	font-weight: 300;
+}
+
+.sponsored img {
+	max-width: 200px;
+	height: auto;
 }
 
 /* Breadcrumbs */
@@ -182,12 +198,17 @@ article {
 }
 .grid {
     display: grid;
-    grid-template-columns: 268px 1fr;
+    grid-template-columns: 1fr 268px;
     grid-gap: 36px;
 }
 
 .sidebar {
-    
+    grid-column: 2 / 2;
+	grid-row-start: 1;
+}
+
+.column {
+	grid-column: 1 / 1;
 }
 
 .content {
@@ -199,7 +220,11 @@ p {
 }
 
 .full-width {
-    grid-column: 1 / -1;
+    /*grid-column: 1 / 1; */
+}
+	
+.infographicheader {
+	margin-bottom: 20px;
 }
 
 /* Footer */
@@ -242,7 +267,17 @@ footer p {
 
 /* iframes */
 .ai2html {
-    border-top: 1px solid #fff;
+    /*border-top: 1px solid #fff;*/
+}
+
+.ai2html::before {
+	content: "";
+	display: flex;
+	width: 15%;
+	align-content: center;
+	border-bottom: #ffffff36 2px dotted;
+	border-width: thick;
+	margin: 20px auto;
 }
 
 .ai2html.loading {
